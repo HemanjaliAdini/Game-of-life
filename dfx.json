@@ -1,0 +1,40 @@
+{
+  "canisters": {
+    "game_of_life": {
+      "main": "src/game_of_life/main.mo",
+      "type": "motoko"
+    },
+    "game_of_life_assets": {
+      "dependencies": [
+        "game_of_life"
+      ],
+      "frontend": {
+        "entrypoint": "src/game_of_life_assets/public/index.jsx"
+      },
+      "source": [
+        "src/game_of_life_assets/assets",
+        "dist/game_of_life_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "dfx": "0.6.4",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    },
+    "tungsten": {
+      "providers": [
+        "https://gw.dfinity.network"
+      ],
+      "type": "persistent"
+    }
+  },
+  "version": 1
+}
